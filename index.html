@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+
+<style>
+body {
+  margin: 0;
+  background: #000;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+#hint {
+  color: #ccc;
+  margin-top: 14px;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+</style>
 </head>
+
 <body>
-  <img src="V BD card.png" alt="">
+
+<img src="V BD card.png" alt="">
+
+<div id="hint">播放</div>
+<button onclick="playMusic()">▶ 播放</button>
+
+<audio id="bgm" loop>
+  <source src="A Thousand Years.m4a" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+  const audio = document.getElementById('bgm');
+  audio.play();
+}
+</script>
+
 </body>
 </html>
